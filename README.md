@@ -103,15 +103,15 @@ Allows users to withdraw their purchased tokens after the presale timeframe has 
 🚀 Execution Example
 Here is a step-by-step example of how a user interacts with the Presale contract to buy tokens and later claim them.
 
-Step 1: Setup & Deploy. The Owner deploys the contract, configuring the token addresses (USDC, USDT, Presale Token), the Chainlink Aggregator address, and the phase parameters (caps, prices, and timestamps). The owner also transfers the total supply of presale tokens into the contract.
+- Step 1: Setup & Deploy. The Owner deploys the contract, configuring the token addresses (USDC, USDT, Presale Token), the Chainlink Aggregator address, and the phase parameters (caps, prices, and timestamps). The owner also transfers the total supply of presale tokens into the contract.
 
-Step 2: User Approval. A User wants to invest 500 USDC. Because USDC is an ERC20 standard token, the user must first call approve() on the USDC contract directly, granting the Presale contract permission to move their funds.
+- Step 2: User Approval. A User wants to invest 500 USDC. Because USDC is an ERC20 standard token, the user must first call approve() on the USDC contract directly, granting the Presale contract permission to move their funds.
 
-Step 3: Execute Purchase. The user calls buyWithStable(USDC_ADDRESS, 500000000) (scaling for 6 decimals). The contract verifies the time, calculates the tokens owed based on the current phase price, updates the user's internal balance, and transfers the 500 USDC directly to the project's designated fundsReceiverAddress.
+- Step 3: Execute Purchase. The user calls buyWithStable(USDC_ADDRESS, 500000000) (scaling for 6 decimals). The contract verifies the time, calculates the tokens owed based on the current phase price, updates the user's internal balance, and transfers the 500 USDC directly to the project's designated fundsReceiverAddress.
 
-Step 4: Phase Transition. Another user buys a massive amount of tokens using ETH. The contract checks _checkCurrentPhase() and recognizes that the total sold amount has surpassed the Phase 0 cap. It automatically increments s_currentPhase to Phase 1, meaning subsequent buyers will pay the Phase 1 price.
+- Step 4: Phase Transition. Another user buys a massive amount of tokens using ETH. The contract checks _checkCurrentPhase() and recognizes that the total sold amount has surpassed the Phase 0 cap. It automatically increments s_currentPhase to Phase 1, meaning subsequent buyers will pay the Phase 1 price.
 
-Step 5: Claiming. The presale reaches its s_endingTime. The user from Step 2 returns and calls claim(). The contract zeroes out their internal balance and transfers their purchased ERC20 presale tokens to their wallet.
+- Step 5: Claiming. The presale reaches its s_endingTime. The user from Step 2 returns and calls claim(). The contract zeroes out their internal balance and transfers their purchased ERC20 presale tokens to their wallet.
 
 ⬆️ Installation
 Bash
