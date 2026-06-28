@@ -25,7 +25,7 @@ If a purchase exceeds the current phase's cap or time limit, the contract automa
 
 ### Architecture Diagram
 
-![Project Diagram](./images/diagram.png)
+![Project Diagram](./images/diagram3.png)
 
 [Presale.sol](./src/Presale.sol) - Main Application Logic
 
