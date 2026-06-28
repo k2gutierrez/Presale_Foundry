@@ -114,16 +114,19 @@ Here is a step-by-step example of how a user interacts with the Presale contract
 - Step 5: Claiming. The presale reaches its s_endingTime. The user from Step 2 returns and calls claim(). The contract zeroes out their internal balance and transfers their purchased ERC20 presale tokens to their wallet.
 
 ⬆️ Installation
-Bash
-- forge install OpenZeppelin/openzeppelin-contracts foundry-rs/forge-std
+```Bash
+forge install OpenZeppelin/openzeppelin-contracts foundry-rs/forge-std
+```
 
 🧪 Testing
-Bash
-- forge test -vvvv --fork-url [https://arb1.arbitrum.io/rpc](https://arb1.arbitrum.io/rpc)
+```Bash
+forge test -vvvv --fork-url [https://arb1.arbitrum.io/rpc](https://arb1.arbitrum.io/rpc)
+```
 
 📊 Coverage
-Bash
-- forge coverage --fork-url [https://arb1.arbitrum.io/rpc](https://arb1.arbitrum.io/rpc)
+```Bash
+forge coverage --fork-url [https://arb1.arbitrum.io/rpc](https://arb1.arbitrum.io/rpc)
+```
 
 📜 Contract Address
 (Provide deployed contract addresses here upon mainnet/testnet launch)
